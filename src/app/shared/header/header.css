@@ -1,0 +1,45 @@
+/* Barra */
+.app-navbar {
+  background-color: #2E8B57; /* Verde da imagem */
+  padding: 6px 14px;
+}
+
+/* Texto Título */
+.navbar-brand {
+  color: #ffffff !important;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+/* Botão hamburguer */
+.menu-btn {
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  border-radius: 6px;
+  padding: 3px 6px;
+  background: transparent !important;
+}
+
+/* Ícone hamburguer branco */
+.menu-btn .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Hover discreto */
+.menu-btn:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Offcanvas escuro */
+.app-offcanvas {
+  background-color: #1f1f1f;
+  color: white;
+}
+
+.app-offcanvas .nav-link,
+.app-offcanvas .dropdown-item {
+  color: white !important;
+}
+
+.app-offcanvas .dropdown-menu {
+  background-color: #2a2a2a;
+}
