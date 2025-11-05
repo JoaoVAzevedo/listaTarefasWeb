@@ -4,7 +4,7 @@
   padding: 6px 14px;
 }
 
-/* Texto Título */
+
 .navbar-brand {
   color: #ffffff !important;
   font-size: 1.05rem;
@@ -43,3 +43,25 @@
 .app-offcanvas .dropdown-menu {
   background-color: #2a2a2a;
 }
+
+/* Fundo verde do menu lateral */
+.offcanvas.offcanvas-end.app-offcanvas {
+  background-color: #2E8B57 !important;
+}
+
+/* Texto dos links */
+.offcanvas.offcanvas-end.app-offcanvas .nav-link,
+.offcanvas.offcanvas-end.app-offcanvas .dropdown-item {
+  color: #ffffff !important;
+}
+
+/* Cabeçalho do menu */
+.offcanvas.offcanvas-end.app-offcanvas .offcanvas-header {
+  background-color: #276b47 !important; /* verde mais escuro */
+}
+
+/* Menu dropdown */
+.offcanvas.offcanvas-end.app-offcanvas .dropdown-menu {
+  background-color: #2E8B57 !important;
+}
+

@@ -1,0 +1,12 @@
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-header {
+  font-weight: bold;
+}
+
+button {
+  border-radius: 8px;
+}
