@@ -1,0 +1,24 @@
+.home-container {
+  margin-top: 55px; /* antes era 100px, ajusta pra ficar colado */
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Card verde do título */
+.titulo-card {
+  width: fit-content;
+  margin: 0 auto;
+  background-color: #198754; /* verde Bootstrap */
+  border-radius: 0.3rem;
+}
+
+/* Botão "Adicionar" */
+.btn-primary {
+  font-weight: 500;
+}
+
+.btn-primary i {
+  margin-left: 5px;
+}
