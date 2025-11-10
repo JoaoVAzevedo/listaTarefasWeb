@@ -8,48 +8,43 @@
       <!-- Nome -->
       <div class="mb-3">
         <label for="nome" class="form-label">Nome</label>
-        <input type="text" id="nome" class="form-control"
-               placeholder="Informe a tarefa"
-               [(ngModel)]="tarefa.nome" name="nome">
+        <input type="text" id="nome" name="nome" [(ngModel)]="tarefa.nome" class="form-control" required>
       </div>
 
       <!-- Prioridade -->
       <div class="mb-3">
         <label for="prioridade" class="form-label">Prioridade</label>
-        <select id="prioridade" class="form-select"
-                [(ngModel)]="tarefa.prioridade" name="prioridade">
-          <option>Alto</option>
-          <option>Médio</option>
-          <option>Baixo</option>
+        <select id="prioridade" name="prioridade" [(ngModel)]="tarefa.prioridade" class="form-select" required>
+          <option value="" disabled selected>Selecione a prioridade</option>
+          <option value="Alta">Alta</option>
+          <option value="Média">Média</option>
+          <option value="Baixa">Baixa</option>
         </select>
       </div>
 
       <!-- Data limite -->
       <div class="mb-3">
-        <label for="dataLimite" class="form-label">Data limite</label>
-        <input type="date" id="dataLimite" class="form-control"
-               [(ngModel)]="tarefa.dataLimite" name="dataLimite">
+        <label for="data" class="form-label">Data limite</label>
+        <input type="date" id="data" name="data" [(ngModel)]="tarefa.data" class="form-control" required>
       </div>
 
       <!-- Categoria -->
       <div class="mb-3">
         <label for="categoria" class="form-label">Categoria</label>
-        <input type="text" id="categoria" class="form-control mb-2"
-               readonly [(ngModel)]="tarefa.categoria" name="categoria">
+        <input type="text" id="categoria" name="categoria" [(ngModel)]="tarefa.categoria" class="form-control mb-2" required>
 
         <div>
-          <button type="button" class="btn btn-outline-primary btn-sm me-1"
-                  (click)="setCategoria('doméstico')">doméstico</button>
-          <button type="button" class="btn btn-outline-primary btn-sm me-1"
-                  (click)="setCategoria('pessoal')">pessoal</button>
-          <button type="button" class="btn btn-outline-primary btn-sm"
-                  (click)="setCategoria('trabalho')">trabalho</button>
+          <button type="button" class="btn btn-outline-primary me-2" (click)="setCategoria('doméstico')">Doméstico</button>
+          <button type="button" class="btn btn-outline-primary me-2" (click)="setCategoria('pessoal')">Pessoal</button>
+          <button type="button" class="btn btn-outline-primary" (click)="setCategoria('trabalho')">Trabalho</button>
         </div>
       </div>
 
       <!-- Botão salvar -->
       <div class="text-end">
-        <button class="btn btn-success" (click)="salvar()">Salvar</button>
+        <button [class]="classeBotao" (click)="salvar()">
+          {{ textoBotao }}
+        </button>
       </div>
     </div>
   </div>

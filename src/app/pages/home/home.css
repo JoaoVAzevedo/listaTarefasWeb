@@ -1,5 +1,5 @@
 .home-container {
-  margin-top: 55px; /* antes era 100px, ajusta pra ficar colado */
+  margin-top: 55px;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
@@ -10,7 +10,7 @@
 .titulo-card {
   width: fit-content;
   margin: 0 auto;
-  background-color: #198754; /* verde Bootstrap */
+  background-color: #198754;
   border-radius: 0.3rem;
 }
 

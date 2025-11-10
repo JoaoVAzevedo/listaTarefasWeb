@@ -1,43 +1,37 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { TarefaService } from '../../services/tarefa';
+import { CommonModule } from '@angular/common';
+import { ITarefa } from '../../models/tarefa.model';
 import { HeaderComponent } from '../../shared/header/header';
-
-interface Tarefa {
-  id: number;
-  nome: string;
-  prioridade: 'BAIXO' | 'MÉDIO' | 'ALTO';
-  data: string;
-}
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeaderComponent],
+  imports: [HeaderComponent, CommonModule],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
 export class HomeComponent {
-  tarefas: Tarefa[] = [];
-  titulo = `Tarefas - ${new Date().toLocaleDateString('en-GB', {
+  tarefas: ITarefa[] = [];
+  titulo = `Tarefas - ${new Date().toLocaleDateString('pt-BR', {
     day: '2-digit', month: 'long', year: 'numeric'
   })}`;
 
-  constructor(private router: Router) {
-    const salvas = localStorage.getItem('tarefas');
-    this.tarefas = salvas ? JSON.parse(salvas) : [];
+  constructor(private router: Router, private tarefaService: TarefaService) {
+    this.tarefas = this.tarefaService.listarTarefas();
   }
 
-  editarTarefa(id: number) {
-    this.router.navigate(['/tarefa-editar', id]);
+  editarTarefa(id: string) {
+    this.router.navigate(['/tarefaAtualiza', id]);
   }
 
-  deletarTarefa(id: number) {
-    this.tarefas = this.tarefas.filter(t => t.id !== id);
-    localStorage.setItem('tarefas', JSON.stringify(this.tarefas));
+  deletarTarefa(id: string) {
+    this.tarefaService.excluirTarefa(id);
+    this.tarefas = this.tarefaService.listarTarefas();
   }
 
   adicionarTarefa() {
-    this.router.navigate(['/tarefa-nova']);
+    this.router.navigate(['/novaTarefa']);
   }
 }

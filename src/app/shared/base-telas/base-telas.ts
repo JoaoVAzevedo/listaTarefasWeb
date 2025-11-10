@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ITarefa } from '../../models/tarefa.model';
 
 @Component({
   selector: 'app-base-telas',
@@ -10,17 +11,14 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./base-telas.css']
 })
 export class BaseTelasComponent {
-
   @Input() titulo: string = 'Nova Tarefa';
+  @Input() tarefa!: ITarefa;
 
-  @Output() onSalvar = new EventEmitter<any>();
+  @Input() textoBotao: string = 'Salvar';
+  @Input() classeBotao: string = 'btn btn-primary';
 
-  tarefa = {
-    nome: '',
-    prioridade: 'Alto',
-    dataLimite: '',
-    categoria: ''
-  };
+
+  @Output() onSalvar = new EventEmitter<ITarefa>();
 
   setCategoria(categoria: string) {
     this.tarefa.categoria = categoria;
